@@ -26,7 +26,7 @@ router.post("/", async (req, res) => {
 
   try {
     const doLogin = await login.save();
-    res.json({logged: doLogin.successfulLogin});
+    res.json({ logged: doLogin.successfulLogin, user: doLogin.login });
   } catch (error) {
     res.json({ message: error });
   }
